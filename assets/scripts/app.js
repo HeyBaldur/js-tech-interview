@@ -1,6 +1,8 @@
 'use strict';
-const numberArr = [2, 3, 6, 8, 7, 8, 10, 22, 55];
+const numberArr = [2, 3, 6, 8, -33, 7, 8, 10, 22, 55, -44, -1, -5];
 const myString = 'Hello everybody I am a super developer';
+const myWord1 = 'racecar';
+const myWord2 = 'table';
 
 // First function
 // Calculate the sum of numbers in an array of numbers
@@ -36,7 +38,6 @@ function findLongestWord(str) {
     let wordToShow;
     for (let i = 0; i < strSplit.length; i++) {
         if (strSplit[i].length > longestWord) {
-            debugger;
             longestWord = strSplit[i].length;
             wordToShow = strSplit[i];
         }
@@ -44,5 +45,36 @@ function findLongestWord(str) {
     return `The word is: ${wordToShow}`;
 }
 
+// Fifth function
+// Create a Palindrome
+function palindrome(word) {
+    word = word.toLowerCase();
+    return (word === word.split('').reverse().join('')); 
+}
+
+// Sixth
+// Create a function that recieves an array of numbers and 
+// return a new array with the positive numbers
+// Using abs
+function getPositveNumbers(arr) {
+    let positiveNumbers = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === Math.abs(arr[i])) {
+            positiveNumbers.push(arr[i]);
+        }
+    }
+    return positiveNumbers;
+}
+
+// Using sign
+function getPositveNumbers2(arr) {
+    let positiveNumbers = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (1 === Math.sign(arr[i])) {
+            positiveNumbers.push(arr[i]);
+        }
+    }
+    return positiveNumbers;
+}
 
 
